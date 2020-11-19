@@ -129,6 +129,9 @@ public class Funcionalidad {
 	}
 	public void borrarVuelos() {
 		 MongoCollection colleccionVuelos = Conexion();
+		 HashMap<String, Vuelos> obtenerDepositos = new HashMap<String, Vuelos>();
+		 int plazasDisponibles = 1;
+			plazasDisponibles = (plazasDisponibles+ 1);
 	        obtenerVuelos();
 	        System.out.println("Que codigo vuelo quieres seleccionar");
 	        String codigo = sc.next();
@@ -139,12 +142,15 @@ public class Funcionalidad {
 	        System.out.println("INTRODUZCA SU CODIGO VENTA A BORRAR");
 	        cambios.append("codigoVenta", sc.next());
 	        Document auxSet1 = new Document("vendidos",cambios);
-	        Document auxSet2 = new Document("$pull", auxSet1);
-	        colleccionVuelos.updateOne(quienCambio, auxSet2);
+	        Document auxSet2 = new Document("plazas_disponibles",plazasDisponibles);
+	        Document auxSet3 = new Document("$pull", auxSet1);
+	        Document auxSet4 = new Document("$set", auxSet2);
+	        colleccionVuelos.updateOne(quienCambio, auxSet3);
+	        colleccionVuelos.updateOne(quienCambio, auxSet4);
 	        System.out.println("VUELO BORRADO CORRECTAMENTE.");
 
 
-    }
+ }
 	
 	public void modificarVuelos() {
 		  MongoCollection colleccionVuelos = Conexion();
