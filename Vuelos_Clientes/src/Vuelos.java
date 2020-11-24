@@ -1,10 +1,8 @@
 
-
 import java.sql.Date;
 
 public class Vuelos {
 
-	
 	private String codigoVuelo;
 	private String origen;
 	private String destino;
@@ -13,10 +11,10 @@ public class Vuelos {
 	private int plazasTotales;
 	private int plazasDisponibles;
 
-	public Vuelos( String codigoVuelo, String origen, String destino, String fecha, String hora, int plazasTotales,
+	public Vuelos(String codigoVuelo, String origen, String destino, String fecha, String hora, int plazasTotales,
 			int plazasisponibles) {
 		super();
-		
+
 		this.codigoVuelo = codigoVuelo;
 		this.origen = origen;
 		this.destino = destino;
@@ -87,14 +85,11 @@ public class Vuelos {
 		this.plazasDisponibles = plazasDisponibles;
 	}
 
-
-
-	
 	@Override
 	public String toString() {
-		return "Vuelo [CODIGOVUELO = " + codigoVuelo + ",ORIGEN = " + origen
-				+ ",DESTINO = " + destino + ",FECHA = " + fecha + ",HORA = " + hora
-				+ ",PLAZAS TOTALES = " + plazasTotales + ",PLAZAS DISPONIBLES = " + plazasDisponibles + "]";
+		return "Vuelo [\n CODIGOVUELO = " + codigoVuelo + ", \n ORIGEN = " + origen + ", \n DESTINO = " + destino + ", \n FECHA = "
+				+ fecha + ", \n HORA = " + hora + ", \n PLAZAS TOTALES = " + plazasTotales + ", \n PLAZAS DISPONIBLES = "
+				+ plazasDisponibles + "]";
 	}
 
 	public String[] getTitulo() {

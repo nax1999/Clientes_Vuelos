@@ -7,40 +7,37 @@ public class Menu {
 		int opcion;
 		int op = 0;
 		Scanner sc = new Scanner(System.in);
-
 		System.out.println("______________Menu principal_____________");
 		System.out.println("                           ");
 		System.out.println("Seleccione la accion a realizar");
-		System.out.println("1 -Comprar Vuelos");
-		System.out.println("2- Mostrar mis Vuelos");
-		System.out.println("3- Eliminar mis Vuelos");
-		System.out.println("4- Modificar mis Vuelos");
-		System.out.println("0- Finalizar programa");
-		System.out.print("opcion: ");
+		System.out.println("1 - Comprar vuelos");
+		System.out.println("2 - Mostrar mis vuelos");
+		System.out.println("3 - Eliminar mis vuelos");
+		System.out.println("4 - Modificar mis vuelos");
+		System.out.println("0 - Finalizar programa");
+		System.out.print("Elige una opcion: ");
 		opcion = sc.nextInt();
 		while (opcion != 0) {
 			switch (opcion) {
-
 			case 1:
-				System.out.println("_______COMPRANDO VUELOS_____");
-				miAcceso.comprarVuelos();
-				System.out.println("_______VUELOS COMPRADOS CORRECTAMENTE_____");
-
+				System.out.println("_______COMPRANDO BILLETES_____");
+				miAcceso.comprarBilletes();
+				System.out.println("_______BILLETES COMPRADOS CORRECTAMENTE_____");
 				break;
 			case 2:
-				System.out.println("_______MOSTRANDO MIS VUELOS_____");
-				// miAcceso.anadirUno();
-				System.out.println("_______MOSTRANDO MIS VUELOS CORRECTAMENTE_____");
+				System.out.println("_______MOSTRANDO MIS BILLETES_____");
+				miAcceso.obtenerVuelos();
+				System.out.println("_______MOSTRANDO MIS BILLETES CORRECTAMENTE_____");
 				break;
 			case 3:
-				System.out.println("_______ELIMINAR MIS VUEOS_____");
-				miAcceso.borrarVuelos();
-				System.out.println("_______VUELOS ELIMINADOS CORRECTAMENTE_____");
+				System.out.println("_______ELIMINAR MIS BILLETES_____");
+				miAcceso.borrarBilletes();
+				System.out.println("_______BILLETES ELIMINADOS CORRECTAMENTE_____");
 				break;
 			case 4:
-				System.out.println("_______MODIFICAR MIS VUELOS_____");
-				miAcceso.modificarVuelos();
-				System.out.println("_______MIS VUELOS SE HAN MODIFICADO CORRECTAMENTE_____");
+				System.out.println("_______MODIFICAR MIS BILLETES_____");
+				miAcceso.modificarBilletes();
+				System.out.println("_______MIS BILLETES SE HAN MODIFICADO CORRECTAMENTE_____");
 				break;
 
 			}
@@ -48,14 +45,13 @@ public class Menu {
 			System.out.println("______________Menu principal_____________");
 			System.out.println("                           ");
 			System.out.println("Seleccione la accion a realizar");
-			System.out.println("1 -Comprar Vuelos");
-			System.out.println("2- Mostrar mis Vuelos");
-			System.out.println("3- Eliminar mis Vuelos");
-			System.out.println("4- Modificar mis Vuelos");
-			System.out.println("0- Finalizar programa");
-			System.out.print("opcion: ");
+			System.out.println("1 - Comprar vuelos");
+			System.out.println("2 - Mostrar mis vuelos");
+			System.out.println("3 - Eliminar mis vuelos");
+			System.out.println("4 - Modificar mis vuelos");
+			System.out.println("0 - Finalizar el programa");
+			System.out.print("Elige una opcion: ");
 			opcion = sc.nextInt();
-
 			if (opcion == 0)
 
 			{
