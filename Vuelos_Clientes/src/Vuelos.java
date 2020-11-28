@@ -1,6 +1,3 @@
-
-import java.sql.Date;
-
 public class Vuelos {
 
 	private String codigoVuelo;
@@ -87,8 +84,8 @@ public class Vuelos {
 
 	@Override
 	public String toString() {
-		return "Vuelo [\n CODIGOVUELO = " + codigoVuelo + ", \n ORIGEN = " + origen + ", \n DESTINO = " + destino + ", \n FECHA = "
-				+ fecha + ", \n HORA = " + hora + ", \n PLAZAS TOTALES = " + plazasTotales + ", \n PLAZAS DISPONIBLES = "
+		return "Vuelo [CODIGOVUELO = " + codigoVuelo + ",ORIGEN = " + origen + ",DESTINO = " + destino + ",FECHA = "
+				+ fecha + ",HORA = " + hora + ",PLAZAS TOTALES = " + plazasTotales + ",PLAZAS DISPONIBLES = "
 				+ plazasDisponibles + "]";
 	}
 
