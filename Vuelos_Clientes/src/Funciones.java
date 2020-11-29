@@ -66,10 +66,11 @@ public class Funciones {
         FindIterable<?> fi = colleccionVuelos.find();
         MongoCursor<?> cur = fi.cursor();
             Document rs = (Document) cur.next();
-            plazasDisponibles = rs.getInteger("plazas_disponibles");
+            plazasDisponibles = rs.getInteger("plazas_disponibles");    
+            int asientos=(int) (Math.random()*plazasDisponibles);
 		Document quienCambio = new Document("codigo", codigoVuelo);
 		Document doc = new Document();
-		doc.append("asiento", 2);
+		doc.append("asiento", asientos);
 		doc.append("dni", dni);
 		doc.append("apellido", nombre);
 		doc.append("nombre", apellido);
@@ -86,17 +87,12 @@ public class Funciones {
 			colleccionVuelos.updateOne(quienCambio, auxSet2);
 			colleccionVuelos.updateOne(quienCambio, auxSet4);
 			System.out.println("Su codigo de venta es: " + codV);
+			System.out.println("Su asiento es: " + asientos);
 						
 		}
 
 	}
 	
-	public void  sinPlazas (String aviso) {
-		
-		
-	}
-	
-
 	public String numAleatorios() {
 
 		char[] chars = "abcdefghijklmnopqrstuvwxyz1234567890".toCharArray();
@@ -131,6 +127,7 @@ public class Funciones {
 			String nombreN, String dniPagadorN, String tarjetaN) {
 		MongoCollection<?> colleccionVuelos = Conexion();
 		String codV = numAleatorios();
+		int plazasDisponibles;
 		Document quienCambio = new Document("codigo", codigoVuelo);
 		Document cambios = new Document();
 		cambios.append("dni", dni);
@@ -138,7 +135,13 @@ public class Funciones {
 		Document auxSet1 = new Document("vendidos", cambios);
 		Document auxSet2 = new Document("$pull", auxSet1);
 		colleccionVuelos.updateOne(quienCambio, auxSet2);
+		FindIterable<?> fi = colleccionVuelos.find();
+        MongoCursor<?> cur = fi.cursor();
+        Document rs = (Document) cur.next();
+		plazasDisponibles = rs.getInteger("plazas_disponibles");    
+        int asientos=(int) (Math.random()*plazasDisponibles);
 		Document cambios2 = new Document();
+		cambios2.append("asiento", asientos);
 		cambios2.append("dni", dniN);
 		cambios2.append("apellido", apellidoN);
 		cambios2.append("nombre", nombreN);
